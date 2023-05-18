@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="final.css" />
+    <script src="https://kit.fontawesome.com/dff35699a2.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body onload="javascript:hideTable(), spurShowHideTable()">
+    <div id="header">
+      <div class="container">
+        <nav>
+          <ul id="sideMenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gear">Gear</a></li>
+            <li><a href="#calculation">Calculation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Project Group 35</p>
+          <h1>
+            Development of web based expert system for Designing of
+            <span>Spur, Helical, Bevel and Worm gear</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------about---------------------------- -->
+    <div id="about">
+      <h1 class="sub-title">About Project</h1>
+      <p>
+        If you're performing some engineering calculations often. That can be
+        developed as an application (software) or webpage this engineering
+        calculations can be solved faster than other processes. It eliminates
+        the repeated work of design calculations and performs calculations
+        precisely. The main aim is to minimize time required for designing the
+        Gears to increase the productivity and accuracy in design. The webpage
+        we developed, is quire the inputs for which the gear is to be design. It
+        performs the design calculations and shows result on webpage. The expert
+        base webpage calculates the design parameters of gears (module,
+        addendum, dedendum, clearance, tooth thickness). The web page takes
+        input from user and performs all design calculations. By using this
+        expert-based system an unskilled person who has only basic knowledge of
+        computer can perform the design calculations in minimum time. Interface
+        of our web page is very user friendly and easy to understand any school
+        or college level student can excess this web page easily its just like
+        filling a form.
+      </p>
+      <p>
+        It is made of formulas of gear design theories (Beam strength equation,
+        wear strength of gear). This system increases manufacturing rate of gear
+        as no physical calculations are needed and decreases labor cost as it
+        needs only one person to handle it which not necessarily requires skill.
+        The web page automates the mechanical design process. The web page is
+        application of programming knowledge in mechanical engineering.
+      </p>
+    </div>
+
+    <!-- ----------------gears---------------------- -->
+    <div id="gears">
+      <div class="container">
+        <h1 class="sub-title">Gears</h1>
+        <div class="gears-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>SPUR GEAR</h2>
+            <p>
+              Spur gears are a cylindrical shaped toothed component used in
+              industrial equipment to transfer mechanical motion as well as
+              control speed, power, and torque. These simple gears are
+              cost-effective, durable, reliable and provide a positive, constant
+              speed drive to facilitate daily industrial operations.
+            </p>
+            <a
+              href="https://www.grobinc.com/spur-gears/#:~:text=Spur%20gears%20are%20a%20cylindrical,to%20facilitate%20daily%20industrial%20operations."
+              >Learn more</a
+            >
+          </div>
+          <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>HELICAL GEAR</h2>
+            <p>
+              helical gears are one type of cylindrical gears with slanted tooth
+              trace. Compared to spur gears, they have the larger contact ratio
+              and excel in quietness and less vibration and able to transmit
+              large force. A pair of helical gears has the same helix angle but
+              the helix hand is opposite.
+            </p>
+            <a href="https://www.motioncontroltips.com/helical-gears-what-are-they-and-where-are-they-used/">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>BEVEL GEAR</h2>
+            <p>
+              Bevel gears are gears where the axes of the two shafts intersect
+              and the tooth-bearing faces of the gears themselves are conically
+              shaped. Bevel gears are most often mounted on shafts that are 90
+              degrees apart, but can be designed to work at other angles as
+              well.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/Bevel_gear">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>WORM GEAR</h2>
+            <p>
+              A worm drive is a gear arrangement in which a worm (which is a
+              gear in the form of a screw) meshes with a worm wheel (which is
+              similar in appearance to a spur gear). The two elements are also
+              called the worm screw and worm gear.
+            </p>
+            <a href="https://en.wikipedia.org/wiki/Worm_drive">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- ----------------------------calculation--------------------------- -->
+    <div id="calculation">
+        <div class="container">
+          
+<!-- ===================================== SPUR GEAR TABLE ==================================================================== -->
+
+
+          <table id="spurTable" class="table">
+            <thead>
+              <tr>
+                <th>Gear</th>
+                <th>
+                  <input type="radio" name="gear" onclick="spur();" id="spur" value="spur"><label for="spur">Spur</label>
+                  <input type="radio" name="gear" onclick="helical();" id="helical" value="helical"><label for="helical">Helical</label>
+                  <input type="radio" name="gear" id="bevel" value="bevel"><label for="bevel">Bevel</label>
+                  <input type="radio" name="gear" id="worm" value="worm"><label for="worm">Worm</label>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Number of teeth on gear</td>
+                <td><input type="number" id="teethOnGear"></td>
+              </tr>
+              <tr>
+                <td>Number of teeth on pinion</td>
+                <td><input type="number" id="teethOnPinion"></td>
+              </tr>
+              <tr>
+                <td>Load</td>
+                <td><input type="number" id="load"> Watt</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td><input type="number" id="speed"> rpm</td>
+              </tr>
+              <tr>
+                <td>Factor of Safety</td>
+                <td><input type="number" id="fos"></td>
+              </tr>
+              <tr>
+                <td>Pitch line Velocity</td>
+                <td><input type="number" id="piv"></td>
+              </tr>
+              <tr>
+                <td>Is Pinion & Gear material same?</td>
+                <td>
+                  <input name="action" type="radio" onclick="showTableSelectYes();" id="yes" value="yes"><label for="yes">YES</label>
+                  <input name="action" type="radio" onclick="showTableSelectNo();" id="no" value="no"><label for="no">NO</label>
+                </td>
+              </tr>
+              
+              <tr id="materiall">
+                <td>Material</td>
+                <td>
+                  <select name="material" id="material">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+
+
+              <tr id="materialNormall">
+                <td id="materialnormal">Gear Material</td>
+                <td>
+                  <select name="materialNormal" id="materialNormal">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+            
+              
+              <tr id="pinionMateriall">
+                <td>Pinion Material</td>
+                <td>
+                  <select name="pinionMaterial" id="pinionMaterial">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+              <!-- <div id="submitSpur">
+              <button onclick="returnText()" class="btn">Submit</button>
+              <button id="clearBtn" class="btn">Clear</button>
+              </div> -->
+            </tbody>
+          </table>
+          <button onclick="returnText()" id="submitBtn" class="btn">Submit</button>
+          <button id="clearBtn" class="btn">Clear</button>
+
+<!-- ===================================== SPUR OUTPUT TABLE ======================================== -->
+<br><br><br><br>
+
+          <table id="spurOutputTable" class="table">
+            <thead>
+              <tr>
+                <th>Spur Gear Result</th>
+                <th>Answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Module</td>
+                <td id="module"></td>
+              </tr>
+              <tr>
+                <td>Addendum</td>
+                <td id="addendum"></td>
+              </tr>
+              <tr>
+                <td>Dedendum</td>
+                <td id="dedendum"></td>
+              </tr>
+              <tr>
+                <td>Clearance</td>
+                <td id="clearance"></td>
+              </tr>
+              <tr>
+                <td>Tooth Thickness</td>
+                <td id="toothThickness"></td>
+              </tr>
+              <tr>
+                <td>Working Depth</td>
+                <td id="workingDepth"></td>
+              </tr>
+              <tr>
+                <td>Pitch Circle Diameter</td>
+                <td id="pitchCircleDiameter"></td>
+              </tr>
+              <tr>
+                <td>Circular Pitch</td>
+                <td id="circularPitch"></td>
+              </tr>
+              <tr>
+                <td>Diameter Pitch</td>
+                <td id="diametralPitch"></td>
+              </tr>
+            </tbody>
+          </table>
+          
+
+<!-- ===================================== HELICAL GEAR TABLE ==================================================================== -->
+
+          <table id="helicalTable" class="table">
+            <thead>
+              <tr>
+                <th>Gear</th>
+                <th>
+                  <input type="radio" name="gear" onclick="spur();" id="spur" value="spur"><label for="spur">Spur</label>
+                  <input type="radio" name="gear" onclick="helical();" id="helical" value="helical"><label for="helical">Helical</label>
+                  <input type="radio" name="gear" id="bevel" value="bevel"><label for="bevel">Bevel</label>
+                  <input type="radio" name="gear" id="worm" value="worm"><label for="worm">Worm</label>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> of teeth on gear</td>
+                <td><input type="number" id="teethOnGear"></td>
+              </tr>
+              <tr>
+                <td>Number of teeth on pinion</td>
+                <td><input type="number" id="teethOnPinion"></td>
+              </tr>
+              <tr>
+                <td>Load</td>
+                <td><input type="number" id="load"> Watt</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td><input type="number" id="speed"> rpm</td>
+              </tr>
+              <tr>
+                <td>Factor of Safety</td>
+                <td><input type="number" id="fos"></td>
+              </tr>
+              <tr>
+                <td>Pitch line Velocity</td>
+                <td><input type="number" id="piv"></td>
+              </tr>
+              <tr>
+                <td>Is Pinion & Gear material same?</td>
+                <td>
+                  <input name="action" type="radio" onclick="showTableSelectYes();" id="yes" value="yes"><label for="yes">YES</label>
+                  <input name="action" type="radio" onclick="showTableSelectNo();" id="no" value="no"><label for="no">NO</label>
+                </td>
+              </tr>
+              <div id="mat">
+              <tr id="materialNormall">
+                <td id="materialnormal">Material</td>
+                <td>
+                  <select name="materialNormal" id="materialNormal">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+            </div>
+              <tr id="materiall">
+                <td>Gear Material</td>
+                <td>
+                  <select name="material" id="material">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+              <tr id="pinionMateriall">
+                <td>Pinion Material</td>
+                <td>
+                  <select name="pinionMaterial" id="pinionMaterial">
+                    <div class="scroll">
+                    <option value="Select">Select</option>
+                    <option value="Gray Cast Iron FG 200">Gray Cast Iron FG 200</option>
+                    <option value="Gray Cast Iron FG 260">Gray Cast Iron FG 260</option>
+                    <option value="Gray Cast Iron FG 350">Gray Cast Iron FG 350</option>
+                    <option value="Gray Cast Iron FG 350(Heat Treated)">Gray Cast Iron FG 350(Heat Treated)</option>
+                    <option value="Cast Steel Grade I">Cast Steel Grade I</option>
+                    <option value="Cast Steel Grade I(Annealed)">Cast Steel Grade I(Annealed)</option>
+                    <option value="Cast Steel Grade I(Hardened Tempered)">Cast Steel Grade I(Hardened Tempered)</option>
+                    <option value="High Tensile Steel CS 640">High Tensile Steel CS 640</option>
+                    <option value="High Tensile Steel CS 700">High Tensile Steel CS 700</option>
+                    <option value="High Tensile Steel CS 840">High Tensile Steel CS 840</option>
+                    <option value="High Tensile Steel CS 1030">High Tensile Steel CS 1030</option>
+                    <option value="High Tensile Steel CS 1230">High Tensile Steel CS 1230</option>
+                    <option value="Carbon Steel 30C8 (Normal)">Carbon Steel 30C8 (Normal)</option>
+                    <option value="Carbon Steel 30C8 (Tempered & Hardened)">Carbon Steel 30C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 40C8 (Normal)">Carbon Steel 40C8 (Normal)</option>
+                    <option value="Carbon Steel 40C8 (Tempered & Hardened)">Carbon Steel 40C8 (Tempered & Hardened)</option>
+                    <option value="Carbon Steel 55C8 (Normal)">Carbon Steel 55C8 (Normal)</option>
+                    <option value="Carbon Steel 55C8 (Tempered & Hardened)">Carbon Steel 55C8 (Tempered & Hardened)</option>
+                  </div>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <div>
+          <button onclick="returnText()" id="submitbtn" class="btn">Submit</button>
+          <button id="clearbtn" class="btn">Clear</button>
+        </div>
+
+
+
+
+
+          
+        </div>
+    </div>
+
+<!-- -------------------contact--------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+                    <p><i class="fa-solid fa-phone"></i>0123456789</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="final.js"></script>
+  </body>
+</html>
